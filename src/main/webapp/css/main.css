@@ -1,0 +1,535 @@
+@font-face {
+  font-family: 'Maven Pro';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Maven Pro Regular'), local('MavenProRegular'), url(../fonts/MavenPro-Regular.ttf) format('truetype');
+}
+
+#logoTopo{
+	margin: 0 auto;
+	display: block;
+	width: 426px;
+}
+
+input[type='text'], input[type='numbers'], input[type='password']{
+	height: 24px;
+	padding: 2px 4px;
+	border: 1px solid #AAA;
+	outline: none;
+}
+
+input:focus, select:focus{
+	border: 1px solid black;
+}
+
+.ui-layout-north{
+	background: url('../img/topo_textura.jpg');
+	background-size: 100%;
+}
+
+select.multipleSelect{
+	height : 110px;
+}
+
+textarea{
+	min-height : 70px !important;
+	max-height : 300px;
+	border  : 1px solid #AAA;
+}
+
+/* General body config */
+@bodyBackgroundColor : #f3f3f3;
+/* End of body config */
+
+/* General menu config */
+	/* Selected menu */
+		@selectedMenuBackgroundColor : #000000;
+		@selectedMenuTextColor 		 : #fff;
+	/* End of selected menu */
+	/* Unselected menu */
+		@unselectedMenuBackgroundColor : #000000;
+		@unselectedMenuTextColor 	   : #fff;
+	/* End of unselected menu */
+/* End of menu config */
+
+ul{list-style: none;}
+input{
+	height  : 18px;
+	padding : 2px;
+	border  : 1px solid #AAA;
+	outline : none;
+}
+input:focus, select:focus, textarea:focus{
+	border : 1px solid black;
+}
+a{
+	outline : none !important;
+}
+.btn{
+	text-decoration : none;
+}
+select{
+	height  : 24px;
+	padding : 2px;
+	border  : 1px solid #AAA;
+	outline : none;
+}
+button{
+	outline : none !important;
+	font-family: maven pro;
+	font-size: 13px !important;
+}
+
+.button{
+	background: #ffffff; /* Old browsers */
+	background: -moz-linear-gradient(top,  #ffffff 0%, #f6f6f6 47%, #ededed 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(47%,#f6f6f6), color-stop(100%,#ededed)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #ffffff 0%,#f6f6f6 47%,#ededed 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #ffffff 0%,#f6f6f6 47%,#ededed 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #ffffff 0%,#f6f6f6 47%,#ededed 100%); /* IE10+ */
+	background: linear-gradient(top,  #ffffff 0%,#f6f6f6 47%,#ededed 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=0 ); /* IE6-9 */
+	border: 1px solid #fff;
+}
+.borderRadiusTopLeft (@radius : 3px){
+	-webkit-border-top-left-radius: @radius;
+	-moz-border-radius-topleft: @radius;
+	border-top-left-radius: @radius;
+}
+.ui-layout-resizer-east{
+	position : absolute;
+}
+body{
+	.first-center{
+		background: url('../img/topo_textura.jpg') no-repeat;
+		background-size: 100% 130px;
+		.second-center{
+			.third-west{
+				#menu-notificacoes{
+					ul{
+						li{
+							text-align : center;
+							margin-bottom : 20px;
+							margin-top : 20px;
+							a{
+							}
+						}
+					}
+				}
+			}
+			.third-center{
+				.fourth-north{
+					border : 1px solid #CCC;
+					border-bottom : 0;
+					.borderRadiusTopLeft(5px);
+					#menu-contexto{
+						.borderRadiusTopLeft(5px);
+						nav{
+							.borderRadiusTopLeft(5px);
+							background : @selectedMenuBackgroundColor;
+							ul{
+								background: #45484d;
+								background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzQ1NDg0ZCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMDAwMDAiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+								background: -moz-linear-gradient(top,  #45484d 0%, #000000 100%);
+								background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#45484d), color-stop(100%,#000000));
+								background: -webkit-linear-gradient(top,  #45484d 0%,#000000 100%);
+								background: -o-linear-gradient(top,  #45484d 0%,#000000 100%);
+								background: -ms-linear-gradient(top,  #45484d 0%,#000000 100%);
+								background: linear-gradient(to bottom,  #45484d 0%,#000000 100%);
+								filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45484d', endColorstr='#000000',GradientType=0 );
+
+								margin : 0;
+								.borderRadiusTopLeft;
+								li{
+									margin-top  : -1px;
+									margin-left : -1px;
+									a{
+										color : @unselectedMenuTextColor;
+										text-decoration : none;
+									}
+								}
+								li.active a, li.active a:hover{
+									color 	   : @selectedMenuTextColor;
+									background : @selectedMenuBackgroundColor;
+								}
+							}
+							.tab-content{
+								position : absolute;
+								width : 100%;
+								background : @selectedMenuBackgroundColor;				
+								div{
+									ul{
+										margin-top : 8px;
+										li{
+											display 	  : block;
+											float 		  : left;
+											margin-left   : 20px;
+											margin-bottom : 8px; 
+											a{
+												color : @selectedMenuTextColor;
+												text-decoration:none;
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+					#breadcrumb-section{
+						font-size : 12px;
+						margin-top : 30px;
+						.breadcrumb{
+							background : none;
+							background-color : #FFF;
+							margin : 0;
+							li{
+								a{
+									color : #0088cc;
+									text-decoration : none;
+								}
+							} 
+						}
+					}
+				}
+				.fourth-center{
+					border : 1px solid #CCC;
+					border-top : 0;
+					background : #FFF;
+					padding : 10px;
+					#pagina{
+						article{
+							header{
+								margin-bottom : 8px;
+								h2{
+									font-size : 16px;
+									color : #000;
+								}
+							}
+							section{
+								font-size : 11px;
+								/* Grid */
+								.formGrid{
+									margin-top  : 20px;
+									border 		: 1px solid #CCC;
+									padding 	: 10px;
+									#addNovo{
+										position : relative;
+										float : right;
+										
+										a{
+											display : block;
+											float : left;
+											text-decoration : none;
+											font-size : 11px;
+											
+											img{
+												display : block;
+												float : left;
+												width : 17px;
+												height : 17px;
+												margin-right : 3px;
+											}
+										}
+									}
+									table{
+										width : 100%;
+										border-collapse : collapse;	
+										thead tr{
+											border-bottom : 1px solid #2C8CBD;
+											th{
+												text-align 	   : left;
+												font-size  	   : 15px;
+												padding-bottom : 2px;
+												a{
+													display 		: block;
+													float 			: left;
+													text-decoration : none;			
+												}
+											}
+										}
+										tbody tr{
+											border-bottom : 1px solid #CCC;	
+											td{
+												&:last-child{
+													.btn{
+														margin-left : 5px;
+													}	
+												}
+												padding-bottom : 2px;
+												padding-top    : 2px;
+												a{
+													text-decoration : none;
+												}
+											}
+										}
+									}
+								}
+								/* Botões do formulário */
+								#botoesForm{
+									display 	  : block;
+									float 		  : left;
+									width 		  : 99.8%;
+									border 		  : 1px solid #CCC;
+									margin-bottom : 20px;
+									margin-top : 10px;
+									height : 30px;
+									background : #e8d6de;
+									.btnForm{
+										display 	  : block;
+										float 		  : right;
+										margin-top 	  : 5px;
+										margin-right  : 15px;
+										margin-bottom : 10px;
+									}
+								}
+								
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.tabelaReport{
+	border-collapse : collapse;
+	margin-top : 25px;
+	font-size : 10px;
+	thead{				
+		tr{
+			th{
+				&:last-child{
+					border-right : 0px !important;
+				}
+				padding : 10px;
+				border-bottom : 1px solid #2C8CBD;
+			}
+			.celulaBordaDireita{
+				border-right : 1px solid #acdbf3;
+			}
+		}		
+	}
+	tbody{
+		 tr{
+			td{
+				width : auto !important;
+				border-right : 1px solid #ddd;
+				padding : 5px;
+				text-align : center;
+				div a span{
+					margin : 0px !important;
+				}
+				&:last-child{
+					border-right : 0;
+				}
+				.celulaBordaDireita{
+					border-right : 1px solid #acdbf3;
+				}
+			}
+		}
+	}
+}
+
+.stripedRow{
+	background : #F7F7F7;
+}
+.hoverRow{
+	background : #D9EBF5;
+}
+.selectedRow{
+	background : #D9EBF5 !important;
+}
+
+.btn{
+	padding : 0px 4px 0px;
+	font-size : 11px !important;
+}
+#grid{
+	font-size : 11px !important;
+}
+
+.gridy-buttons input {
+	height: 20px !important;	
+	padding-bottom: 2px !important;
+	width: 32px !important;
+	font-size: 10px !important;
+}
+#pageTitleGrid{
+	display : block;
+	float : left;
+	font-size : 12px;
+}
+#pageTitleGrid h2{
+	color : #000 !important;
+	font-weight : bolder;
+}
+table#grid tbody tr td:last-child .btn{
+	display: block;
+}
+table#grid tbody tr td:last-child a.btn{
+	float: left;
+}
+.gridy-result{
+	display: none;
+}
+.gridy-status {
+	margin : 0px !important;
+	height : 20px !important;
+}
+
+.blocoForm{
+	margin-top : 10px;
+	border : 1px solid #CCC;
+	border-spacing : 0;
+	width : 100%;
+	tbody{
+		tr{
+			padding-left : 15px;
+			.tituloBloco{
+				text-align : left;
+				border-bottom : 1px solid #CCC;
+				font-size 	: 14px;
+				font-weight : bold;
+				line-height : normal;
+				padding-left : 15px;
+				padding-right : 15px;
+				height : 25px;
+				background : #f3f3f3;
+				button, a{
+					float : right;
+				}
+			}
+			.subtituloBloco{
+/*                                                font-size 	: 14px;
+				font-weight : bold;
+				padding : 0 25px 0 25px;
+				height : 25px;
+				label{
+					display : block;
+					border-bottom : 1px solid #CCC;
+					padding-bottom : 3px;					
+				}*/
+			}
+			&:last-child{
+				td{
+					padding-bottom : 15px;
+				}
+			}
+			td{
+				width : 50%;
+				/* utiliza-se o 'p' apenas para container de checkbox (não pode ser label por motivos óbvios). */
+				label, p{
+					margin-top : 10px;
+					display : block;
+					text-align : left;
+					margin-left : 15px;
+					margin-right : 15px;
+				}
+				input[type="checkbox"] {
+					width : auto;
+					height : 10px;
+					margin-left : 15px;
+				}
+				input{
+					width : 99%;
+				}
+				select, textarea{
+					width : 99.8%;
+				}
+				table.tabelaItens{
+					width : 100%;
+					border-spacing : 0;
+					tbody{
+						tr{
+							td{
+								width : 50%;
+								padding-bottom : 5px;
+								label{
+									width : 90%;
+									margin-top : 5px;
+									display : block;
+									float : left;
+									text-align : left;
+									margin-left : 15px;
+									margin-right : 15px;
+									input, select{
+										display : block;
+										float : left;
+									}
+									div a span{
+										margin : 0px;
+									}
+								}
+								span{
+									display : block;
+									float : left;
+									margin-top : 19px;
+								}
+								&:last-child{
+									padding-bottom: 5px;
+								}
+							}
+						}
+					}	
+				}
+			}
+		}
+	}
+	.tbody-allocationBusiness{
+		tr{
+			td{
+				padding : 15px;
+				span{
+					display : block;
+					float : right;
+					margin-right : 17px;
+					margin-top : 25px;
+					button{
+						display : block;
+						float : right;
+					}
+				}
+				table{
+					width : 100%;
+					tbody{
+						tr{
+							th.tituloBloco{
+								label{
+									width : 100% !important;
+									display : block;
+									padding-right : 15px;
+									margin : 0px !important;
+								}
+							}
+							td{
+								padding : 0px;
+								padding-bottom : 15px;
+								label{
+									display : block;
+								}
+								&:last-child{
+									label{
+										float : left;
+										width : 85%;
+										display : block;
+										input{
+											width : 99%;
+										}
+									}
+									span {
+										display : block;
+										float : left;
+										margin-top : 24px;
+										margin-right : 0;
+										margin-left : 17px;
+									} 
+								}
+							}
+						}
+					}
+				}
+			}
+		}	
+	}
+}

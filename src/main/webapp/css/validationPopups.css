@@ -1,0 +1,69 @@
+/* Validação (popup de erro no topo do formulário) */
+.errorForm{
+	border 	   : 1px solid #AF2B31;
+	background : #F4AAAA;
+	margin-top : 5px;
+	width 	   : 100%;
+	li{
+		display    	  : block;
+		margin-top 	  : 3px;
+		margin-bottom : 3px;
+		color 		  : black;	
+		margin-left   : 10px;		
+	}
+}
+/* Ícone vermelho e input destacado */
+.validationPopup2{
+	width 		: auto;
+	height 		: auto;
+	display 	: block;
+	float 		: left;
+	margin-left :-20px;
+	margin-top  : 8px;
+}
+.validationPopup{
+	border		  : 1px solid crimson;
+	outline 	  : none;
+}
+/* Fim da validação */
+.blueNotification{
+	border 	   : 1px solid #AF2B31;
+	background : #6BF;
+	margin-top : 5px;
+	width 	   : 100%;
+	margin-bottom : 10px;
+	li{
+		display    	  : block;
+		margin-top 	  : 3px;
+		margin-bottom : 3px;
+		color 		  : black;	
+		margin-left   : 10px;		
+	}
+}
+.greenNotification{
+	border 	   : 1px solid #428E3D;
+	background : #B6DFB2;
+	width 	   : 100%;
+	margin-top : 5px;	
+	li{
+		display    	  : block;
+		margin-top 	  : 3px;
+		margin-bottom : 3px;
+		color 		  : black;	
+		margin-left   : 10px;		
+	}
+}
+.yellowNotification{
+	border 	   : 1px solid #AF2B31;
+	background : yellow;
+	margin-top : 5px;
+	width 	   : 100%;
+	margin-bottom : 10px;
+	li{
+		display    	  : block;
+		margin-top 	  : 3px;
+		margin-bottom : 3px;
+		color 		  : black;	
+		margin-left   : 10px;		
+	}
+}

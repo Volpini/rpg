@@ -1,0 +1,79 @@
+@font-face {
+  font-family: 'Maven Pro';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Maven Pro Regular'), local('MavenProRegular'), url(../fonts/MavenPro-Regular.ttf) format('truetype');
+}
+
+#logoTopo{
+	margin: 0 auto;
+	display: block;
+	width: 426px;
+}
+
+input[type='text'], input[type='numbers'], input[type='password']{
+	height: 24px;
+	padding: 2px 4px;
+	border: 1px solid #AAA;
+	outline: none;
+}
+
+input:focus, select:focus{
+	border: 1px solid black;
+}
+
+.ui-layout-north{
+	background: url('../img/topo_textura.jpg') no-repeat;
+	background-size: 100% 130px;
+}
+
+article#login{
+	margin: 0 auto;
+	section{
+		#form-login{
+			div{
+				padding: 30px 10px 0 10px;
+				height: 150px;
+				-webkit-box-shadow: 0px 1px 6px rgba(50, 50, 50, 1);
+				-moz-box-shadow: 0px 1px 6px rgba(50, 50, 50, 1);
+				box-shadow: 0px 1px 6px rgba(50, 50, 50, 1);
+				position: relative;
+				margin-left: 50%;
+				left: -275px;
+				width: 550px;
+				table{
+					border-collapse: collapse;
+					width: 100%;
+					thead{
+						tr{
+							th{
+								padding-bottom: 20px;
+								font-size: 22px;
+								span{
+									width: 190px;
+									border-bottom: 1px solid #ccc;
+									display: block;
+								}
+							}
+						}
+					}
+					tbody{
+						width: 100%;
+						tr{
+							width: 100%;
+							clear: both;
+							td{
+								width: 50%;
+							}
+						}
+					}
+				}
+				button{
+					margin-bottom: 5px;
+					padding-left: 10px;
+					padding-right: 10px;
+				}
+			}
+		}
+	}
+}
