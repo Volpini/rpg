@@ -31,4 +31,23 @@
         </tr>
     </tbody>
 </table>
+<table class="blocoForm">
+    <tbody>
+        <tr>
+            <th class="tituloBloco" colspan="2">
+                <label>
+                    <fmt:message key="${controller}.subtitulo2" />
+                </label>
+            </th>
+        </tr>
+		<tr>
+			<td colspan="2">
+				<label>
+					<fmt:message key="${controller}.talento" />
+					<form:multipleSelect name="personagem.talentos[].id" options="${talentos}" value="${personagem.talentos}" disabled="${disabled}"/>
+				</label>
+			</td>
+		</tr>
+	</tbody>
+</table>
 <form:botoesForm/>

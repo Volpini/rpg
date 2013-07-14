@@ -12,6 +12,7 @@ import br.com.rpg.component.grid.GridHeader;
 import br.com.rpg.component.grid.Gridy;
 import br.com.rpg.dao.PersonagemDao;
 import br.com.rpg.dao.SystemUserDao;
+import br.com.rpg.dao.TalentoDao;
 import br.com.rpg.model.Personagem;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -31,14 +32,16 @@ public class PersonagemController {
 	private final Validator validator;
 	private final PersonagemDao personagemDao;
 	private final SystemUserDao systemUserDao;
+	private final TalentoDao talentoDao;
 	
 	public PersonagemController(Result result, Validator validator, PersonagemDao personagemDao,
-			SystemUserDao systemUserDao) {
+			SystemUserDao systemUserDao, TalentoDao talentoDao) {
 		this.result = result;
 		gridHeader = new GridHeader<>(result, Personagem.class);
 		this.validator = validator;
 		this.personagemDao = personagemDao;
 		this.systemUserDao = systemUserDao;
+		this.talentoDao = talentoDao;
 	}
 
 	@Get
@@ -112,5 +115,6 @@ public class PersonagemController {
 
 	private void setSelects() {
 		result.include("systemUsers", systemUserDao.listarTodos());
+		result.include("talentos", talentoDao.listarTodos());
 	}
 }
