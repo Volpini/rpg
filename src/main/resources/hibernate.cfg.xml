@@ -27,5 +27,6 @@
 		<mapping class="br.com.rpg.model.Controller" />
 		<mapping class="br.com.rpg.model.ControllerGroup" />
 		<mapping class="br.com.rpg.model.Permission" />
+		<mapping class="br.com.rpg.model.Personagem" />
 	</session-factory>
 </hibernate-configuration>

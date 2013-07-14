@@ -25,17 +25,6 @@
 			buttonMax : 6
 		});
 		
-		$("input.gridy-button-refresh").after("<a type='button' id='btn-export-to-csv' title='Export Only Seen' style='background: url(\"<c:url value='/img/export_seen.png'/>\") no-repeat 3px 3px #F8F8F8;' class='botaoExportGrid' ></button><a href='${controller}/exportAllToCsv' style='background: url(\"<c:url value='/img/export_all.png'/>\") no-repeat 3px 2px #F8F8F8; height : 20px;' title='Export All' class='botaoExportGrid'></a>");
-		
-		$("#btn-export-to-csv").click(function(){
-			search = $("input[name=search]").val();
-			page = $("input[name=page]").val();
-			sortName = $("input[name=sortName]").val();
-			sortOrder = $("input[name=sortOrder]").val();
-			find = $(".gridy-find-option select").val();
-			rows = $(".gridy-row-option select").val();
-			window.location = "<c:url value='/${controller}/exportToCsv'/>?search="+search+"&page="+page+"&sortName="+sortName+"&sortOrder="+sortOrder+"&find="+find+"&rows="+rows;
-		});
 		/* Gambiarra para não excluir nada do Sistema só por teclar enter no campo de pesquisa do Gridy */
 		$("[name='search']").keydown(function(event){
 			if(event.keyCode == 13){
@@ -85,17 +74,7 @@
 			</c:forEach>
 			<td>
 				<a href='<c:url value="/${controller}/edit/\${id}" />' class="btn btn-warning"><fmt:message key="grid.editar" /></a>
-				<c:choose>
-					<c:when test="${controller == 'expensesPlanning'}">
-						<a href="<c:url value='/${controller}/exportScenarioToCsv/\${id}' />" target="_blank" class="btn btn-inverse"><fmt:message key="grid.exportToCsv" /></a>
-					</c:when>
-					<c:otherwise>
-						<button type='submit' value='\${id}' name="${controller}.id" class="btn btn-danger buttonDel" onclick=""><fmt:message key="grid.excluir" /></button>
-					</c:otherwise>
-				</c:choose>
-				<c:if test="${controller != 'expensesPlanning'}">
-					
-				</c:if>
+				<button type='submit' value='\${id}' name="${controller}.id" class="btn btn-danger buttonDel" onclick=""><fmt:message key="grid.excluir" /></button>
 			</td>
 		</tr>
 	</script>

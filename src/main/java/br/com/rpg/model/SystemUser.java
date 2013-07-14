@@ -71,4 +71,7 @@ public class SystemUser implements Serializable {
 	public void setUserGroup(UserGroup userGroup) {
 		this.userGroup = userGroup;
 	}
+	public String getForSelect(){
+		return this.name;
+	}
 }
