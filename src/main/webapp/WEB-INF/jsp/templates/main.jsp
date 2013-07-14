@@ -37,6 +37,7 @@
                                             <li><a href="<c:url value='/userGroup'/>"><fmt:message key="menu.controle.grupousuarios" /></a></li>
                                             <li><a href="<c:url value='/systemUser'/>"><fmt:message key="menu.controle.usuarios" /></a></li>
 											<li><a href="<c:url value='/personagem'/>"><fmt:message key="menu.controle.personagens" /></a></li>
+											<li><a href="<c:url value='/talento'/>"><fmt:message key="menu.controle.talentos" /></a></li>
                                         </ul>
                                     </div>
 								</div>
