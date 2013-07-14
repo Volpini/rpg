@@ -29,5 +29,6 @@
 		<mapping class="br.com.rpg.model.Permission" />
 		<mapping class="br.com.rpg.model.Personagem" />
 		<mapping class="br.com.rpg.model.Talento" />
+		<mapping class="br.com.rpg.model.Livro" />
 	</session-factory>
 </hibernate-configuration>
