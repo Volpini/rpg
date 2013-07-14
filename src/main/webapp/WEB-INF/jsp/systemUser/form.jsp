@@ -47,12 +47,6 @@
 					<form:select options="${groups}" name="systemUser.userGroup.id" value="${systemUser.userGroup.id}" />
 				</label>
 			</td>
-			<td>
-				<label>
-					<fmt:message key="${controller}.costCenterGroup" />
-					<form:select options="${costCenterPermissions}" name="systemUser.costCenterPermission.id" value="${systemUser.costCenterPermission.id}" />
-				</label>
-			</td>
 		</tr>
 	</tbody>
 </table>
