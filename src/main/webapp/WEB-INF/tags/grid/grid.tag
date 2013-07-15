@@ -74,7 +74,7 @@
 			</c:forEach>
 			<td>
 				<a href='<c:url value="/${controller}/edit/\${id}" />' class="btn btn-warning"><fmt:message key="grid.editar" /></a>
-				<button type='submit' value='\${id}' name="${controller}.id" class="btn btn-danger buttonDel" onclick=""><fmt:message key="grid.excluir" /></button>
+				<button type='submit' value='\${id}' name="${controller}.id" class="btn btn-danger buttonDel" onclick="return confirmaExclusao();"><fmt:message key="grid.excluir" /></button>
 			</td>
 		</tr>
 	</script>
