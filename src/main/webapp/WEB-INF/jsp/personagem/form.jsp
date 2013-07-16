@@ -50,4 +50,65 @@
 		</tr>
 	</tbody>
 </table>
+<table class="blocoForm">
+    <tbody>
+        <tr>
+            <th class="tituloBloco" colspan="2">
+                <label>
+                    <fmt:message key="${controller}.subtitulo3" />
+                </label>
+				<button type="button" class="btn btn-success" id="addNewItem"><fmt:message key="${controller}.novoItem" /></button>
+            </th>
+        </tr>
+		<tr>
+			<td colspan="2">
+				<table class="tabelaItens" id="listaItens">
+					<tbody>
+						<c:forEach items="${personagem.itensPersonagem}" var="itemPersonagem">
+							<tr>
+								<td>
+									<label>
+										<fmt:message key="${controller}.item" />
+										<form:select name="personagem.itensPersonagem[].item.id" options="${itens}" value="${itemPersonagem.item.id}" />
+									</label>
+								</td>
+								<td>
+									<label>
+										<fmt:message key="${controller}.quantidade" />
+										<input type="text" name="personagem.itensPersonagem[].quantidade" value="${itemPersonagem.quantidade}" />
+									</label>
+								</td>
+							</tr>
+						</c:forEach>
+					</tbody>
+				</table>
+			</td>
+		</tr>
+		<script id="modeloItemPersonagem" type="template">
+			<tr>
+				<td>
+					<label>
+						<fmt:message key="${controller}.item" />
+						<form:select name="personagem.itensPersonagem[].item.id" options="${itens}" clazz="noSelect2" />
+					</label>
+				</td>
+				<td>
+					<label>
+						<fmt:message key="${controller}.quantidade" />
+						<input type="text" name="personagem.itensPersonagem[].quantidade" />
+					</label>
+				</td>
+			</tr>
+		</script>
+	</tbody>
+	<script>
+		head(function(){
+			$("#addNewItem").click(function(){
+				var modelo = $("#modeloItemPersonagem").html();
+				$("#listaItens tbody").append(modelo);
+				$("#listaItens tbody select:last").removeClass("noSelect2").select2();
+			});
+		});
+	</script>
+</table>
 <form:botoesForm/>

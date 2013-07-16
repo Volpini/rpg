@@ -31,5 +31,6 @@
 		<mapping class="br.com.rpg.model.Talento" />
 		<mapping class="br.com.rpg.model.Livro" />
 		<mapping class="br.com.rpg.model.Item" />
+		<mapping class="br.com.rpg.model.PersonagemItem" />
 	</session-factory>
 </hibernate-configuration>
