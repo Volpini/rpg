@@ -17,6 +17,8 @@ public class PersonagemItem implements Serializable {
 	@GeneratedValue
 	private Long id;
 	@ManyToOne
+	private Personagem personagem;
+	@ManyToOne
 	private Item item;
 	@NotNull
 	private double quantidade;
@@ -27,6 +29,14 @@ public class PersonagemItem implements Serializable {
 
 	public void setId(Long id) {
 		this.id = id;
+	}
+
+	public Personagem getPersonagem() {
+		return personagem;
+	}
+
+	public void setPersonagem(Personagem personagem) {
+		this.personagem = personagem;
 	}
 
 	public Item getItem() {

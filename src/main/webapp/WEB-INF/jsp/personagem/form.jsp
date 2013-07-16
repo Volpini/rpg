@@ -77,6 +77,9 @@
 										<fmt:message key="${controller}.quantidade" />
 										<input type="text" name="personagem.itensPersonagem[].quantidade" value="${itemPersonagem.quantidade}" />
 									</label>
+									<span>
+										<button type="button" class="btn btn-danger" onclick="removeLinha(this);">X</button>
+									</span>
 								</td>
 							</tr>
 						</c:forEach>
@@ -97,6 +100,9 @@
 						<fmt:message key="${controller}.quantidade" />
 						<input type="text" name="personagem.itensPersonagem[].quantidade" />
 					</label>
+					<span>
+						<button type="button" class="btn btn-danger" onclick="removeLinha(this);">X</button>
+					</span>
 				</td>
 			</tr>
 		</script>

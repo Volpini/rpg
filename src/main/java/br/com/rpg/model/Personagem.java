@@ -34,7 +34,8 @@ public class Personagem implements Serializable {
 	@ManyToMany
 	private List<Talento> talentos;
 	@NotNull
-	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "personagem")
+	@OnDelete(action = OnDeleteAction.CASCADE)
 	private List<PersonagemItem> itensPersonagem;
 	
 	public Long getId() {

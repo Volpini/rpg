@@ -103,6 +103,15 @@ body{
 	.first-center{
 		background: url('../img/topo_textura.jpg') no-repeat;
 		background-size: 100% 130px;
+		#opcoesUsuario{
+			display: block;
+			float: right;
+			background-color: black;
+			padding: 5px;			
+			a img:hover{
+				cursor: pointer;
+			}
+		}
 		.second-center{
 			.third-west{
 				#menu-notificacoes{
@@ -464,7 +473,7 @@ table#grid tbody tr td:last-child a.btn{
 								span{
 									display : block;
 									float : left;
-									margin-top : 19px;
+									margin-top : 22px;
 								}
 								&:last-child{
 									padding-bottom: 5px;

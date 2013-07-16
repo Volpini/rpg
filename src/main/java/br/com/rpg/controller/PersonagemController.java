@@ -15,7 +15,6 @@ import br.com.rpg.dao.PersonagemDao;
 import br.com.rpg.dao.SystemUserDao;
 import br.com.rpg.dao.TalentoDao;
 import br.com.rpg.model.Personagem;
-import br.com.rpg.model.PersonagemItem;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -65,7 +64,6 @@ public class PersonagemController {
 
 	@Post
 	public void add(Personagem personagem) {
-		removeAtributosNull(personagem);
 		validator.validate(personagem);
 		validator.onErrorRedirectTo(this).add();
 		personagemDao.adicionar(personagem);
@@ -80,7 +78,6 @@ public class PersonagemController {
 
 	@Post
 	public void edit(Personagem personagem) {
-		removeAtributosNull(personagem);
 		validator.validate(personagem);
 		validator.onErrorRedirectTo(this).edit(personagem.getId());
 		personagemDao.atualizar(personagem);
@@ -123,18 +120,5 @@ public class PersonagemController {
 		result.include("systemUsers", systemUserDao.listarTodos());
 		result.include("talentos", talentoDao.listarTodos());
 		result.include("itens", itemDao.listarTodos());
-	}
-	
-	private void removeAtributosNull(Personagem personagem){
-		List<PersonagemItem> itensPersonagem = personagem.getItensPersonagem();
-		if(itensPersonagem != null){
-			List<PersonagemItem> itensPersonagemFinal = new ArrayList();
-			for (PersonagemItem personagemItem : itensPersonagem) {
-				if(personagemItem.getItem().getId() != null){
-					itensPersonagemFinal.add(personagemItem);
-				}
-			}
-			personagem.setItensPersonagem(itensPersonagemFinal);
-		}
 	}
 }

@@ -20,7 +20,12 @@
     <body style="display:none">
         <div class="first-center">
             <div class="second-north">
-				<span id="logoTopo"><a href="" onclick="javascript:void(0);"><img src="<c:url value='/img/dnd_logo.png' />"></a></span>
+				<span id="opcoesUsuario">
+					<a id="gearOpcoes" onclick="javascript:void(0);">
+						<img src="<c:url value='/img/gear_black.png' />" width="20" title="<fmt:message key='opcoesUsuario.opcoes' />" />
+					</a>
+				</span>
+				<span id="logoTopo"><a href="#"><img src="<c:url value='/img/dnd_logo.png' />"></a></span>
             </div>
             <div class="second-center">
                 <div class="third-center">
@@ -136,6 +141,11 @@
                 });
                 
 				$("select:not(.noSelect2)").select2();
+				$("#gearOpcoes").mouseenter(function(){
+					$(this).find("img").attr("src", "<c:url value='/img/gear_white.png' />");
+				}).mouseleave(function(){
+					$(this).find("img").attr("src", "<c:url value='/img/gear_black.png' />");
+				});
             });
         </script>
         <c:if test="${viewType.isView and controller != 'expensesPlanningReport'}">
