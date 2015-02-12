@@ -1,36 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
-	<session-factory>
-		<property name="hibernate.dialect">org.hibernate.dialect.MySQL5InnoDBDialect</property>
-		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/rpg</property>
-		<property name="hibernate.connection.username">root</property>
-		<property name="hibernate.connection.password"></property>
-		<!-- CONFIGS -->
-		<property name="hibernate.format_sql">true</property>
-		<property name="hibernate.show_sql">false</property>
-		<property name="hibernate.hbm2ddl.auto">update</property>
-		<property name="hibernate.use_sql_comments">true</property>
-		<property name="hibernate.jdbc.batch_size">20</property>
-		<property name="hibernate.connection.provider_class">
-			org.hibernate.connection.C3P0ConnectionProvider
-		</property>
-		<property name="hibernate.c3p0.min_size">1</property>
-		<property name="hibernate.c3p0.max_size">20</property>
-		<property name="hibernate.c3p0.timeout">30</property>
-		<property name="hibernate.c3p0.idle_test_period">100</property>
-		<!-- CONFIGS -->
+    <session-factory>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL5InnoDBDialect</property>
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/rpg</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password"></property>
+        <!-- CONFIGS -->
+        <property name="hibernate.format_sql">true</property>
+        <property name="hibernate.show_sql">false</property>
+        <property name="hibernate.hbm2ddl.auto">update</property>
+        <property name="hibernate.use_sql_comments">true</property>
+        <property name="hibernate.jdbc.batch_size">20</property>
+        <property name="hibernate.connection.provider_class">
+            org.hibernate.connection.C3P0ConnectionProvider
+        </property>
+        <property name="hibernate.c3p0.min_size">1</property>
+        <property name="hibernate.c3p0.max_size">20</property>
+        <property name="hibernate.c3p0.timeout">30</property>
+        <property name="hibernate.c3p0.idle_test_period">100</property>
+        <!-- CONFIGS -->
 		
-		<mapping class="br.com.rpg.model.SystemUser" />
-		<mapping class="br.com.rpg.model.UserGroup" />
-		<mapping class="br.com.rpg.model.Controller" />
-		<mapping class="br.com.rpg.model.ControllerGroup" />
-		<mapping class="br.com.rpg.model.Permission" />
-		<mapping class="br.com.rpg.model.Personagem" />
-		<mapping class="br.com.rpg.model.Talento" />
-		<mapping class="br.com.rpg.model.Livro" />
-		<mapping class="br.com.rpg.model.Item" />
-		<mapping class="br.com.rpg.model.PersonagemItem" />
-	</session-factory>
+        <mapping class="br.com.rpg.model.SystemUser" />
+        <mapping class="br.com.rpg.model.UserGroup" />
+        <mapping class="br.com.rpg.model.Controller" />
+        <mapping class="br.com.rpg.model.ControllerGroup" />
+        <mapping class="br.com.rpg.model.Permission" />
+        <mapping class="br.com.rpg.model.Personagem" />
+        <mapping class="br.com.rpg.model.Talento" />
+        <mapping class="br.com.rpg.model.Livro" />
+        <mapping class="br.com.rpg.model.Item" />
+        <mapping class="br.com.rpg.model.PersonagemItem" />
+        <mapping class="br.com.rpg.model.Habilidade"/>
+        <mapping class="br.com.rpg.model.Pericia"/>
+        <mapping class="br.com.rpg.model.PersonagemHabilidade"/>
+        <mapping class="br.com.rpg.model.PersonagemPericia"/>
+    
+    </session-factory>
 </hibernate-configuration>
