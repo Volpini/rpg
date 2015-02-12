@@ -10,11 +10,14 @@ import br.com.caelum.vraptor.view.Results;
 import br.com.rpg.annotation.BreadCrumb;
 import br.com.rpg.component.grid.GridHeader;
 import br.com.rpg.component.grid.Gridy;
+import br.com.rpg.dao.HabilidadeDao;
 import br.com.rpg.dao.ItemDao;
 import br.com.rpg.dao.PersonagemDao;
 import br.com.rpg.dao.SystemUserDao;
 import br.com.rpg.dao.TalentoDao;
+import br.com.rpg.model.Habilidade;
 import br.com.rpg.model.Personagem;
+import br.com.rpg.model.PersonagemHabilidade;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -35,9 +38,10 @@ public class PersonagemController {
 	private final SystemUserDao systemUserDao;
 	private final TalentoDao talentoDao;
 	private final ItemDao itemDao;
+        private final HabilidadeDao habilidadeDao;
 	
 	public PersonagemController(Result result, Validator validator, PersonagemDao personagemDao,
-			SystemUserDao systemUserDao, TalentoDao talentoDao, ItemDao itemDao) {
+			SystemUserDao systemUserDao, TalentoDao talentoDao, ItemDao itemDao, HabilidadeDao habilidadeDao) {
 		this.result = result;
 		gridHeader = new GridHeader<>(result, Personagem.class);
 		this.validator = validator;
@@ -45,6 +49,8 @@ public class PersonagemController {
 		this.systemUserDao = systemUserDao;
 		this.talentoDao = talentoDao;
 		this.itemDao = itemDao;
+                this.habilidadeDao = habilidadeDao;
+
 	}
 
 	@Get
@@ -58,16 +64,32 @@ public class PersonagemController {
 	}
 
 	@Get
-	public void add() {
+	public Personagem add() {
+                Personagem personagem = new Personagem();
+                List<PersonagemHabilidade> habilidadesPersonagem = new ArrayList<PersonagemHabilidade>();
+                
+                List<Habilidade> habilidades = habilidadeDao.listarTodos();
+                for(Habilidade h : habilidades){
+                    PersonagemHabilidade pHabilidade = new PersonagemHabilidade();
+                    pHabilidade.setValor(10);
+                    pHabilidade.setPersonagem(personagem);
+                    pHabilidade.setHabilidade(h);
+                    habilidadesPersonagem.add(pHabilidade);
+                }
+                personagem.setHabilidades(habilidadesPersonagem);
+                
 		setSelects();
+                return personagem;
 	}
 
 	@Post
-	public void add(Personagem personagem) {
+	public Personagem add(Personagem personagem) {
+            
 		validator.validate(personagem);
 		validator.onErrorRedirectTo(this).add();
 		personagemDao.adicionar(personagem);
 		result.redirectTo(this).index();
+                return personagem;
 	}
 
 	@Get("/personagem/edit/{id}")
