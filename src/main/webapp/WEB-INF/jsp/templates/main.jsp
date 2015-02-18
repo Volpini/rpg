@@ -41,9 +41,10 @@
                                             <li><a href="<c:url value='/item'/>"><fmt:message key="menu.controle.itens" /></a></li>
                                             <li><a href="<c:url value='/userGroup'/>"><fmt:message key="menu.controle.grupousuarios" /></a></li>
                                             <li><a href="<c:url value='/systemUser'/>"><fmt:message key="menu.controle.usuarios" /></a></li>
-											<li><a href="<c:url value='/personagem'/>"><fmt:message key="menu.controle.personagens" /></a></li>
-											<li><a href="<c:url value='/talento'/>"><fmt:message key="menu.controle.talentos" /></a></li>
-											<li><a href="<c:url value='/livro'/>"><fmt:message key="menu.controle.livros" /></a></li>
+                                            <li><a href="<c:url value='/personagem'/>"><fmt:message key="menu.controle.personagens" /></a></li>
+                                            <li><a href="<c:url value='/talento'/>"><fmt:message key="menu.controle.talentos" /></a></li>
+                                            <li><a href="<c:url value='/livro'/>"><fmt:message key="menu.controle.livros" /></a></li>
+                                            <li><a href="<c:url value='/campanha'/>"><fmt:message key="menu.controle.campanhas" /></a></li>
                                         </ul>
                                     </div>
 								</div>

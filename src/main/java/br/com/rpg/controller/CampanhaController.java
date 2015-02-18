@@ -97,7 +97,7 @@ public class CampanhaController {
 		for (Campanha campanha : campanhas) {
 			Map campanhaM = new HashMap();
 			campanhaM.put("id", campanha.getId());
-			campanhaM.put("name", campanha.getNome());
+			campanhaM.put("nome", campanha.getNome());
 			list.add(campanhaM);
 		}
 		Map root = new HashMap();

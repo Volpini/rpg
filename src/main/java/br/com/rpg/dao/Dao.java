@@ -30,10 +30,12 @@ import org.hibernate.criterion.Restrictions;
  */
 public abstract class Dao<T> {
 
-    private Session session;
+    protected Session session;
     private Class<T> perClass;
     private Set<String> alias = new HashSet<String>();
     private Criterion criterion;
+	private Criteria cCriteria;
+	private Criteria tCriteria;
 
     public Dao(Session session, Class<T> perClass) {
         this.session = session;
@@ -68,15 +70,23 @@ public abstract class Dao<T> {
         session.clear();
     }
 
+	protected Criteria getCCriteria(int rows, int page) {
+		if (this.cCriteria == null)
+			this.cCriteria = session.createCriteria(perClass).setMaxResults(rows).setFirstResult(rows * (page - 1));
+		return this.cCriteria;
+	}
+	
+	protected Criteria getTCriteria() {
+		return session.createCriteria(perClass);
+	}
+	
     public Gridy listar(String search, int page, String sortName, String sortOrder, String find, int rows) {
-        Criteria criteria = session.createCriteria(perClass)
-                .setMaxResults(rows)
-                .setFirstResult(rows * (page - 1));
-        Criteria total = session.createCriteria(perClass);
+        Criteria criteria = getCCriteria(rows, page);
+        Criteria total = getTCriteria();
 
         Conjunction conjunction = Restrictions.conjunction();
         find = alterSeparator(find);
-        criteria = createAlias(criteria, total, find);
+        criteria = createAlias(criteria, find);
         if (find != null && search != null) {
             add(conjunction, find, search);
         } else if (search != null) {
@@ -84,14 +94,14 @@ public abstract class Dao<T> {
             for (Field field : perClass.getDeclaredFields()) {
                 if (field.getAnnotation(GridColumn.class) != null) {
                     String column = alterSeparator(field.getAnnotation(GridColumn.class).value());
-                    criteria = createAlias(criteria, total, column);
+                    criteria = createAlias(criteria, column);
                     add(or, column, search);
                 }
             }
             conjunction.add(or);
         }
         sortName = alterSeparator(sortName);
-        criteria = createAlias(criteria, total, sortName);
+        criteria = createAlias(criteria, sortName);
         if (sortName != null && sortOrder != null && !sortName.equals("options")) {
             if (sortOrder.equals("asc")) {
                 criteria.addOrder(Order.asc(sortName));
@@ -120,7 +130,7 @@ public abstract class Dao<T> {
      * @param field
      * @return
      */
-    private Criteria createAlias(Criteria criteria, Criteria total, String field) {
+    protected Criteria createAlias(Criteria criteria, String field) {
         if (field != null) {
             if (field.contains(".")) {
                 String values[];
@@ -129,14 +139,14 @@ public abstract class Dao<T> {
                     if (!alias.contains(values[i])) {
                         alias.add(values[i]);
                         criteria.createAlias(values[i], values[i], Criteria.LEFT_JOIN);
-                        total.createAlias(values[i], values[i], Criteria.LEFT_JOIN);
+                        getTCriteria().createAlias(values[i], values[i], Criteria.LEFT_JOIN);
                     }
                 }
             }
         }
         return criteria;
     }
-
+	
     private String alterSeparator(String field) {
         String replaced = null;
         if (field != null) {
