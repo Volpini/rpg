@@ -4,7 +4,6 @@
 <%@ taglib prefix="vld" tagdir="/WEB-INF/tags/validacao"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
-
 <vld:validacao/>
 <input type="hidden" name="campanha.id" value="${campanha.id}"/>
 <table class="blocoForm">
@@ -20,42 +19,31 @@
             <td>
                 <label>
                     <fmt:message key="${controller}.nome" />
-                    <input type="text" name="campanha.nome" value="${campanha.nome}" ${disabled} />
+                    <input type="text" name="aventura.nome" value="${aventura.nome}" ${disabled} />
                 </label>
             </td>
-            <td>
-                <label>
-                    <fmt:message key="${controller}.dataInicio" />
-                    <form:datepicker type="text" id="dataInicio" name="campanha.dataInicio" value="${dataInicio}" disabled="${disabled}"/>
-                </label>
-            </td>
+
         </tr>
         <tr colspan="2">
             <td>
                 <label>
                     <fmt:message key="${controller}.descricao" />
-                    <textarea name="campanha.descricao"  ${disabled}>${campanha.descricao}</textarea>
+                    <textarea name="aventura.descricao"  ${disabled}>${aventura.descricao}</textarea>
                 </label>
             </td>
-            <td>
-                <label>
-                    <fmt:message key="${controller}.dataCadastro" />
-                    <form:datepicker type="text" id="dataCadastro" name="campanha.dataCadastro" value="${dataCadastro}" disabled="true" />
-                </label>
-            </td>
+
         </tr>
         <tr>
             <td>
                 <label>
                     <fmt:message key="${controller}.personagens" />
-                    <form:multipleSelect name="campanha.personagens[].id" options="${personagens}" value="${campanha.personagens}" disabled="${disabled}"/>
+                    <form:multipleSelect name="aventura.personagens[].id" options="${personagens}" value="${aventura.personagens}" disabled="${disabled}"/>
                 </label>
             </td>
             <td>
                 <label>
-                    <fmt:message key="${controller}.mestre" />
-                    <input type="text"  value="${campanha.mestre.name}" disabled />
-                    <input type="hidden" name="campanha.mestre.id" value="${campanha.mestre.id}"/>
+                    <fmt:message key="${controller}.campanha" />
+                    <input type="text"  value="${campanha.nome}" disabled />
                 </label>
             </td>
         </tr>

@@ -5,12 +5,11 @@
 
 <tiles:insertTemplate template="/WEB-INF/jsp/templates/main.jsp">
 	<tiles:putAttribute name="title">
-		<fmt:message key="${controller}.titulo.edit" />
+		<fmt:message key="${controller}.titulo.add" />
 	</tiles:putAttribute>
 	<tiles:putAttribute name="body">
-		<form action="<c:url value='/${controller}/edit'/>" method="post">
+		<form action="<c:url value='/${controller}/add'/>" method="post">
 			<jsp:include page="form.jsp" />
 		</form>
-                
 	</tiles:putAttribute>
 </tiles:insertTemplate>

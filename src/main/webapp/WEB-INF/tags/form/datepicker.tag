@@ -21,8 +21,6 @@
 						altField: "#data_${id}",
 						minDate: "${minDate}",
 						maxDate: "${maxDate}",
-						showOn: "button",
-						buttonText: "Calendário",
 						showButtonPanel: true,
 						onClose: function(dateText, inst) {
 							var value = $("#${id}").val();
@@ -37,9 +35,9 @@
 		} catch (e) {
 			$("#${id}").attr("disabled","disabled");
 		}
-		$("#${id}").mask("99/99/9999");
+		
 	});
 </script>
 <c:set var="valueData" scope="request"><joda:format value="${value}" pattern="dd/MM/yyyy"/></c:set>
-<input class="ui-campoData" type="${empty type ? 'text' : type }" id="${id}" value="${valueData}" placeholder="__/__/____" maxlength="10" ${disabled} />
+<input class="ui-campoData" type="${empty type ? 'text' : type }" id="${id}" value="${valueData}" placeholder="__/__/____" maxlength="10" readonly="readonly" ${disabled} />
 <input type="hidden" name="${name}" id="data_${id}" value="<joda:format value="${value}" pattern="dd/MM/yyyy HH:mm"/>" class="${classe}"/>

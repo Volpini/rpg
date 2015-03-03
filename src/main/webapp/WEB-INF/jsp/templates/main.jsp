@@ -149,15 +149,15 @@
 				});
             });
         </script>
-        <c:if test="${viewType.isView and controller != 'expensesPlanningReport'}">
+        <c:if test="${viewType.isView and controller != 'campanha'}">
             <script>
                 /* Excluir botões de 'add' e 'remover' linhas que funcionam apenas para add e edit 
 				 * 
 				 */
                 head(function() {
                     // Seletores devem ser separados, ou então irá excluir botões errados da página 
-                    $("section#pagina section a:not(#botoesForm a):not(.select2-choice)").remove();
-                    $("section#pagina section button:not(#botoesForm button)").remove();
+                    $("section#pagina section a:not(#botoesForm a):not(.select2-choice):not(.gridNotRemove)").remove();
+                    $("section#pagina section button:not(#botoesForm button):not(.gridNotRemove)").remove();
                 });
             </script>
         </c:if>

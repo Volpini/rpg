@@ -6,9 +6,10 @@
         <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
         <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/rpg</property>
         <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">root</property>
         <!-- CONFIGS -->
         <property name="hibernate.format_sql">true</property>
-        <property name="hibernate.show_sql">false</property>
+        <property name="hibernate.show_sql">true</property>
         <property name="hibernate.hbm2ddl.auto">update</property>
         <property name="hibernate.use_sql_comments">true</property>
         <property name="hibernate.jdbc.batch_size">20</property>
@@ -35,6 +36,11 @@
         <mapping class="br.com.rpg.model.Pericia"/>
         <mapping class="br.com.rpg.model.PersonagemHabilidade"/>
         <mapping class="br.com.rpg.model.PersonagemPericia"/>
-        <mapping class="br.com.rpg.model.Campanha"/>    
+        <mapping class="br.com.rpg.model.Campanha"/>   
+        <mapping class="br.com.rpg.model.Aventura"/>   
+        
+        
+        <!--MAPEAMENTO DE VIEWS ABAIXO--> 
+        <mapping class="br.com.rpg.model.view.CampanhasMestrePersonagemView" />   
     </session-factory>
 </hibernate-configuration>

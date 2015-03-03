@@ -48,7 +48,7 @@
                         <c:out value="${pHabilidade.habilidade.nome}"/>
                         <input type="hidden" name="personagem.habilidades[].habilidade.id" value="${pHabilidade.habilidade.id}"/>
                         <input type="hidden" name="personagem.habilidades[].personagem.id" value="${personagem.id}"/>
-                        <input type="text" size="2" max="2" width="10px" name="personagem.habilidades[].valor" value="${pHabilidade.valor}" />
+                        <input type="text" size="2" max="2" width="10px" name="personagem.habilidades[].valor" value="${pHabilidade.valor}" ${disabled}/>
                     </label>
                 </c:forEach>
             </td>

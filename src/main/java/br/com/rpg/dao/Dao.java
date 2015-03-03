@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.persistence.EntityNotFoundException;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -60,8 +61,11 @@ public abstract class Dao<T> {
         return criteria.list();
     }
 
-    public T buscar(Long id) {
-        return (T) session.get(perClass, id);
+    public T buscar(Long id) throws EntityNotFoundException{
+        T t = (T) session.get(perClass, id);
+        if(t==null)
+            throw new EntityNotFoundException("Não encontrado no banco id:"+ id);
+        return t;
     }
 
     public void atualizar(T t) {
@@ -119,7 +123,7 @@ public abstract class Dao<T> {
         List list = criteria.list();
         return new Gridy(list, (Long) total.setProjection(Projections.rowCount()).uniqueResult());
     }
-
+    
     /**
      * Cria os alias das tabelas com base no valor do campo. </br> Este metodo
      * serve para fazer o join das tabelas relacionadas com base no nome do
@@ -147,7 +151,7 @@ public abstract class Dao<T> {
         return criteria;
     }
 	
-    private String alterSeparator(String field) {
+    protected String alterSeparator(String field) {
         String replaced = null;
         if (field != null) {
             replaced = field.replaceAll("_", "\\.");
@@ -155,7 +159,7 @@ public abstract class Dao<T> {
         return replaced;
     }
 
-    private void add(Junction conjunction, String find, String search) {
+    protected void add(Junction conjunction, String find, String search) {
         try {
             if (getType(find).equals(Integer.class)) {
                 try {

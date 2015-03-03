@@ -52,6 +52,7 @@ public class Personagem implements Serializable {
         private List<PersonagemPericia> pericias;
         
         
+        
       	public Long getId() {
 		return id;
 	}

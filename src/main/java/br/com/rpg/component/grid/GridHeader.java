@@ -22,7 +22,9 @@ public class GridHeader<T> {
 	private static final String GRID_COLUNAS = "gridColunas";
 	private static final String GRID_BUSCA = "gridBusca";
 	private static final String COLUNAS = "colunas";
-	
+        private static final String ADD_DIV = "addDiv";
+	private boolean showOptions = true;
+        private Boolean showAddDiv = true;
 	private final Result result;
 
 	private final Class<T> clazzGrid;
@@ -40,16 +42,24 @@ public class GridHeader<T> {
 		this.result.include(COLUNAS, getAllNameFields());
 		this.result.include(GRID_COLUNAS, getColunas());
 		this.result.include(GRID_BUSCA, getPesquisaveis());
+                this.result.include(ADD_DIV, showAddDiv);
+                
 	}
 
 	private JSONArray getColunas() {
+            List<GridHeaderColunm> allNameFields = getAllNameFields();
+            if(showOptions){
 		GridHeaderColunm colunmOptions = new GridHeaderColunm("Options","");
 		colunmOptions.setWidth(90);
-		List<GridHeaderColunm> allNameFields = getAllNameFields();
 		allNameFields.add(colunmOptions);
+            }
 		return new JSONArray( allNameFields , false);
 	}
-
+        
+        public void disableAddButton(){
+            showAddDiv = false;
+        }
+        
 	private JSONArray getPesquisaveis() {
 		return new JSONArray( getNameFieldsSeacheable() , false);
 	}
@@ -125,4 +135,18 @@ public class GridHeader<T> {
 		
 		return fields;
 	}
+
+    /**
+     * @return the showOptions
+     */
+    public boolean isShowOptions() {
+        return showOptions;
+    }
+
+    /**
+     * @param showOptions the showOptions to set
+     */
+    public void setShowOptions(boolean showOptions) {
+        this.showOptions = showOptions;
+    }
 }
